@@ -4,11 +4,11 @@
 
 ---
 
-## 下载（当前稳定版 v1.7）
+## 下载（当前稳定版 v1.7.1）
 
-👉 **[Releases → v1.7](https://github.com/suixin0306-crypto/LBEE-Uncensored-Patch/releases/tag/v1.7)**
+👉 **[Releases → v1.7.1](https://github.com/suixin0306-crypto/LBEE-Uncensored-Patch/releases/tag/v1.7.1)**
 
-下载 `LBEE_Uncensored_Patch_v1.7_setup.exe`（约 679MB）→ **双击运行** → 按 4 步向导操作
+下载 `LBEE_Uncensored_Patch_v1.7.1_setup.exe`（约 679MB）→ **双击运行** → 按 4 步向导操作
 
 安装器会自动：
 1. 检测游戏目录与原版状态（含汉化组件版本检查）
@@ -57,7 +57,8 @@
 
 | 版本 | 内容 | 状态 |
 |---|---|---|
-| v1.7 | 文本精修 + BGM 对齐 + 傍晚分支补全 | ✅ 当前稳定版 |
+| v1.7.1 | 安装器版本号修复 | ✅ 当前稳定版 |
+| v1.7 | 文本精修 + BGM 对齐 + 傍晚分支补全 | 建议升级 |
 | v1.6.2 | 修复 New Game 调试跳转残留 + 30 条坏跳转 | 建议升级 |
 | v1.6.1 | 补齐最后 2 个选项 + FARCALL 修复 + 安装器改进 | 建议升级 |
 | v1.6 | 全量内容 + 全部 CG + H 选项 + 鉴赏重做 + 新安装器 | 建议升级 |
