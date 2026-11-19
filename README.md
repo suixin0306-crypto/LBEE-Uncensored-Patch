@@ -39,10 +39,10 @@ Restores the cut H-scenes of *Little Busters! English Edition* (Steam, all-ages)
 到 [Releases](../../releases) 下载全部 4 个分卷：
 
 ```
-LBEE_中文H内容补丁_v1.2.7z.001
-LBEE_中文H内容补丁_v1.2.7z.002
-LBEE_中文H内容补丁_v1.2.7z.003
-LBEE_中文H内容补丁_v1.2.7z.004
+LBEE_Uncensored_Patch_v1.2.7z.001
+LBEE_Uncensored_Patch_v1.2.7z.002
+LBEE_Uncensored_Patch_v1.2.7z.003
+LBEE_Uncensored_Patch_v1.2.7z.004
 ```
 
 **2. 合并 / Merge**
@@ -50,10 +50,10 @@ LBEE_中文H内容补丁_v1.2.7z.004
 把 4 个文件放在**同一个文件夹**里，双击 `合并.bat`（或在本目录打开命令行执行）：
 
 ```bat
-copy /b LBEE_中文H内容补丁_v1.2.7z.001 + LBEE_中文H内容补丁_v1.2.7z.002 + LBEE_中文H内容补丁_v1.2.7z.003 + LBEE_中文H内容补丁_v1.2.7z.004 LBEE_中文H内容补丁_v1.2.7z
+copy /b LBEE_Uncensored_Patch_v1.2.7z.001 + LBEE_Uncensored_Patch_v1.2.7z.002 + LBEE_Uncensored_Patch_v1.2.7z.003 + LBEE_Uncensored_Patch_v1.2.7z.004 LBEE_Uncensored_Patch_v1.2.7z
 ```
 
-得到 `LBEE_中文H内容补丁_v1.2.7z`（4,154,465,990 字节，SHA256 见 `SHA256SUMS.txt`）。
+得到 `LBEE_Uncensored_Patch_v1.2.7z`（4,154,465,990 字节，SHA256 见 `SHA256SUMS.txt`）。
 
 **3. 解压 / Extract**
 
