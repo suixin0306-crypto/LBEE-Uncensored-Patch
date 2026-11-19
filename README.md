@@ -1,57 +1,63 @@
 # Little Busters! English Edition — Uncensored H-Scene Patch
 
-给 Steam 版《Little Busters! English Edition》补回被删减的 H 剧情（中文台词 + 原版语音 + CG + 配乐 + 鉴赏图鉴）。
+给 Steam 版《Little Busters! English Edition》补回被删减的 H 内容（中文台词 + 原版语音 + 全部 CG + 配乐 + 鉴赏图鉴）。
 
 ---
 
-## 下载（当前稳定版 v1.5）
+## 下载（当前稳定版 v1.6）
 
-👉 **[Releases → v1.5](https://github.com/suixin0306-crypto/LBEE-Uncensored-Patch/releases/tag/v1.5)**
+👉 **[Releases → v1.6](https://github.com/suixin0306-crypto/LBEE-Uncensored-Patch/releases/tag/v1.6)**
 
-下载 `LBEE_Uncensored_Patch_v1.5.7z`（637MB）→ 解压 → 双击 **`安装.exe`**
+下载 `LBEE_Uncensored_Patch_v1.6_setup.exe`（约 678MB）→ **双击运行** → 按 4 步向导操作
+
+安装器会自动：
+1. 检测游戏目录与原版状态（含汉化组件版本检查）
+2. 安装 **Jack-Myth 的中文汉化（2026.10.01）**（如尚未安装）
+3. 备份 → 写入 H 内容 → 合并 1,835 条语音 → 更新兼容层 dsound.dll
 
 前置条件：
-- Steam 正版，游戏为**原版状态**（全新安装或 Steam 验证过文件完整性）
-- 约 6GB 空闲磁盘
-- 装过"无印版补丁"等改过 `LITBUS_WIN32.exe` 的，请先 Steam 验证还原
+- Steam 正版 Windows 游戏，**原版状态**（装过其它补丁请先 Steam 验证文件完整性）
+- 约 3GB 游戏盘空间 + 1GB 系统盘空间
 
 ---
 
-## ✅ 已解决的问题
+## ✅ v1.6 内容
 
-1. **结局黑屏出现角色 HCG（严重）** — H 图只使用引擎背景加载真正支持的安全槽位（EVENTCG/BGCG）；OTHOCG/CHARCG 保持原版 → 结局 ED 图、文本记录(Log)、立绘、鉴赏零污染
-2. **鉴赏模式集成 H CG**（v1.5）— 新增 47 格，看过自动解锁
-3. **官方汉化升级 2026.10.01** — 修复 Log 卡死、物品栏缺字、翻译修正
-4. **来ヶ谷（Kurugaya）线 H 段** — 316 行中文 + 105 条语音
-5. **结局残留 HCG / 黑屏** — H 段结束恢复宿主画面
-6. **部分中文缺字** — 生僻字替换
-7. **佐々美线无法进入** — 修复 FARCALL 目标偏移
-8. **H 段配乐**
+- **全量 H 内容**（补齐此前缺失约 660 行，含误删前戏恢复）
+- **原版 H 选项**（葉留佳：更进一步的事/接吻、用嘴/用手）
+- **全部 H CG（100 张）**（.PAK 追加扩容，不再精选）
+- **鉴赏 H CG 专属**（8 页；同场景变体合并成组，可 n/m 翻看）
+- **来ヶ谷线 H 段**（316 行新译 + 105 语音）
+- **语音 1,835 条**
+- **修复选项处查看历史文本卡死**（旧 dsound.dll 版本混装问题）
+- **全新单文件图形安装器**：樱花色 4 步向导、LB! 图标/Logo、自动检测修复
 
 ## ❌ 已知限制
 
-1. **H CG 为 47 张精选**（引擎安全槽位仅 55 个）
-2. **H 段选项（SELECT）未移植** — 原版 H 内的选项（用嘴/用手等）目前线性播放
-3. 旧存档不兼容（请用新存档）
-
-## 🎯 后续目标
-
-1. **H 段选项移植** — 解析 EX `SELECT` 生成 LBEE 分支
-2. **恢复更多 CG** — 引擎加载链路已逆向（`notes/engine_image_refs.md`），探索更多安全槽位
-3. 安装器/分发优化
+1. 旧存档不兼容（请使用**新存档**）
+2. 仅支持 Windows / Steam 版
+3. 安装后不要再运行汉化补丁；Steam 验证会还原补丁
 
 ---
+
+## 特别感谢
+
+- **中文汉化作者：Jack-Myth** — [LBEE_TranslationPatch](https://github.com/Jack-Myth/LBEE_TranslationPatch)
+  （没有 Jack-Myth 的汉化，就没有这个补丁）
+- 作者：**Oya4me**
+- 反馈问题 QQ 群：**1136805764**
 
 ## 版本历史
 
 | 版本 | 内容 | 状态 |
 |---|---|---|
-| v1.5 | 鉴赏集成版（47 格 H CG 图鉴）| ✅ 当前稳定版 |
-| v1.4 | 新汉化 2026.10.01 + 来ヶ谷线 + 安全槽位 | 建议升级 |
-| v1.3 | 安全槽位版（旧汉化）| 建议升级 |
-| v1.2 | 132 张完整 CG，但污染结局 ED 图与 Log 界面 | ⚠️ 已废弃 |
+| v1.6 | 全量内容 + 全部 CG + H 选项 + 鉴赏重做 + 新安装器 | ✅ 当前稳定版 |
+| v1.5 | 11 段 H + 鉴赏集成 | 建议升级 |
+| v1.4 | 新汉化 + 来ヶ谷 + 安全槽位 | 建议升级 |
+| v1.3 | 修复结局 HCG 污染 | 建议升级 |
+| v1.2 | 132 张完整 CG，但污染结局/Log | ⚠️ 已废弃 |
 
 ## 版权声明
 
-- 官方中文汉化：Jack-Myth — [LBEE_TranslationPatch](https://github.com/Jack-Myth/LBEE_TranslationPatch)
 - 游戏版权归 Key / VisualArts 所有；本补丁仅供个人学习交流，请支持正版，勿传播游戏本体
+- 官方中文汉化版权归 Jack-Myth
