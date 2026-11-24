@@ -1,78 +1,50 @@
-# Little Busters! English Edition — Uncensored H-Scene Patch
+# Steam Deck / Linux 安装器（分支：steam-deck）
 
-给 Steam 版《Little Busters! English Edition》补回被删减的 H 内容（中文台词 + 原版语音 + 全部 CG + 配乐 + 鉴赏图鉴）。
+> ⚠️ **这个分支只给 Steam Deck 用。**
+> Windows 用户请回 [main 分支](https://github.com/suixin0306-crypto/LBEE-Uncensored-Patch) 下载 `LBEE_Uncensored_Patch_v1.7.4_setup.exe` 双击安装，**不需要**这里的东西。
 
----
+## 解决什么问题
 
-## 下载（当前稳定版 v1.7.4）
+原版 `setup.exe` 是「C# 外壳 + 内嵌 ZIP」，外壳解开后调用 `安装.exe` → `powershell.exe -File install.ps1`。
+Steam Deck 的 Proton 兼容层（俗称模拟器）不自带 PowerShell，内层脚本一行都没执行，
+外壳最后校验 `SCRIPT.PAK` 哈希失败，于是弹「安装未完成（校验未通过）」。
 
-👉 **[Releases → v1.7.4](https://github.com/suixin0306-crypto/LBEE-Uncensored-Patch/releases/tag/v1.7.4)**
+这个分支用纯 Python 重做了安装流程，在 SteamOS 自带的 python3 上直接跑，不经过 Wine / Proton。
 
-下载 `LBEE_Uncensored_Patch_v1.7.4_setup.exe`（约 1.03GB）→ **双击运行** → 按 4 步向导操作
+## 用法
 
-安装器会自动：
-1. 检测游戏目录与原版状态（含汉化组件版本检查）
-2. 安装 **Jack-Myth 的中文汉化（2026.10.01）**（如尚未安装）
-3. 备份 → 写入 H 内容 → 合并 1,835 条语音 → 更新兼容层 dsound.dll
+1. 下载本分支：Code → Download ZIP（或 clone 后 `git checkout steam-deck`）
+2. 解压，得到 `lbee_deck_install.py` 和 `安装.sh`
+3. 把它们和 `LBEE_Uncensored_Patch_v1.7.4_setup.exe` 放在同一目录
+4. 桌面模式打开 Konsole：
 
-前置条件：
-- Steam 正版 Windows 游戏，**原版状态**（装过其它补丁请先 Steam 验证文件完整性）
-- 约 3GB 游戏盘空间 + 1GB 系统盘空间
+```bash
+cd ~/Downloads
+python3 lbee_deck_install.py --check    # 先确认能识别到游戏目录
+python3 lbee_deck_install.py            # 开始安装
+```
 
----
+5. Steam → 属性 → 启动选项，填入：
 
-## ✅ v1.7.3 内容
+```
+WINEDLLOVERRIDES="dsound=n,b" %command%
+```
 
-- **全量 H 内容**（补齐此前缺失约 660 行，含误删前戏恢复）
-- **原版 H 选项**（葉留佳：更进一步的事/接吻、用嘴/用手）
-- **全部 H CG（100 张）**（.PAK 追加扩容，不再精选）
-- **鉴赏 H CG 专属**（8 页；同场景变体合并成组，可 n/m 翻看）
-- **来ヶ谷线 H 段**（316 行新译 + 105 语音）
-- **语音 1,835 条**
-- **修复选项处查看历史文本卡死**（旧 dsound.dll 版本混装问题）
-- **修复语音 id 冲突**（H 语音迁移到新增 id，基础语音不动）
-- **修复全新安装自动汉化失败**（内置官方汉化数据，一键安装）
-- **安装结果提示**（成功/失败弹窗 + 退出询问）
-- **4 个遗漏选项全部补齐**（葉留佳×2 + 沙耶 + 来谷）
-- **傍晚告别段补全**（17 行 + 8 条新语音）
-- **BGM 全面对齐 EX**（16/16 段起始曲 + 27 切换 + 22 淡入淡出）
-- **文本精修**（46 处错词/缺字 + 重复旁白删除）
-- **FARCALL 偏移修复**（沙耶线入口）
-- **安装器磁盘空间检测**
-- **全新单文件图形安装器**：樱花色 4 步向导、LB! 图标/Logo、自动检测修复
+6. 用**新存档**进游戏。
 
-## ❌ 已知限制
+## 已验证
 
-1. 旧存档不兼容（请使用**新存档**）
-2. 仅支持 Windows / Steam 版
-3. 安装后不要再运行汉化补丁；Steam 验证会还原补丁
+- 4GB `VOICE0.PAK` 合并结果与官方 `LBEE_VoiceMerge4.exe` **逐字节一致**（SHA256 相同）
+- 解包 `setup.exe` 内置 487 个文件 / 1.75GB，约 6 秒
+- 在已打补丁的目录重跑：自检 4 项全 OK、文件哈希不变（幂等）
 
----
+## 已知限制
 
-## 特别感谢
+- 仅 SteamOS / Linux；Windows 请用 main 分支的 `setup.exe`
+- Steam「验证文件完整性」会回滚本补丁
+- 旧存档不兼容，必须新开档
+- 目前只在 Windows 上做过等价性验证，**尚未在真机 Steam Deck 上完整回归**；遇到问题请带上 `--check` 的输出反馈
 
-- **中文汉化作者：Jack-Myth** — [LBEE_TranslationPatch](https://github.com/Jack-Myth/LBEE_TranslationPatch)
-  （没有 Jack-Myth 的汉化，就没有这个补丁）
-- 作者：**Oya4me**
-- 反馈问题 QQ 群：**1136805764**
+## 版权
 
-## 版本历史
-
-| 版本 | 内容 | 状态 |
-|---|---|---|
-| v1.7.4 | 全线路 EX 逐行审计 + 路线修复 | ✅ 当前稳定版 |
-| v1.7.3 | 语音冲突修复 + 全新安装修复 | 建议升级 |
-| v1.7.1 | 安装器版本号修复 | 建议升级 |
-| v1.7 | 文本精修 + BGM 对齐 + 傍晚分支补全 | 建议升级 |
-| v1.6.2 | 修复 New Game 调试跳转残留 + 30 条坏跳转 | 建议升级 |
-| v1.6.1 | 补齐最后 2 个选项 + FARCALL 修复 + 安装器改进 | 建议升级 |
-| v1.6 | 全量内容 + 全部 CG + H 选项 + 鉴赏重做 + 新安装器 | 建议升级 |
-| v1.5 | 11 段 H + 鉴赏集成 | 建议升级 |
-| v1.4 | 新汉化 + 来ヶ谷 + 安全槽位 | 建议升级 |
-| v1.3 | 修复结局 HCG 污染 | 建议升级 |
-| v1.2 | 132 张完整 CG，但污染结局/Log | ⚠️ 已废弃 |
-
-## 版权声明
-
-- 游戏版权归 Key / VisualArts 所有；本补丁仅供个人学习交流，请支持正版，勿传播游戏本体
-- 官方中文汉化版权归 Jack-Myth
+游戏版权归 Key / VisualArts；中文汉化由 Jack-Myth 制作；补丁作者 Oya4me，反馈 QQ 群 1136805764。
